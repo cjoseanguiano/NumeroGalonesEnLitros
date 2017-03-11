@@ -22,29 +22,34 @@ public class Main {
         if (dameLitro > 0) {
             total = dameLitro * litro;
             JOptionPane.showMessageDialog(null, "Valor " + total);
+            System.out.printf("%.2f", total);
+
         } else {
-//            galonConvertir = Double.parseDouble(JOptionPane.showInputDialog("Dame el galon a convertir a litro"));
-            calcularLitroaGalon();
+            galonConvertir = Double.parseDouble(JOptionPane.showInputDialog("Dame el galon a convertir a litro"));
+            System.out.println(calcularLitroaGalon(galonConvertir));
 
         }
     }
+//7.56
+//3.78
+//11.34
+//15.12
+//18.9
+//22.68
 
-    public static void calcularLitroaGalon() {
-//7.5708
-// 3.7854
-//11.3562
+    public static double calcularLitroaGalon(double galon) {
+        int gl = 0;
+        int i = 0;
         int contador = 0;
-        double valore = (double) (3.7854 * 3);
-        System.out.println("MY VALOR " +valore);
-        for (int i = 1; i < 10; i++) {
-            if (11.3562 / i == 3.7853999999999997) {
-                System.out.println("---SI---");
-                contador++;
+
+        for (i = 0; i < 10; i++) {
+            if (galon / i == 3.78) {
+                System.out.println("Valor : " + i);
+                gl = i;
             } else {
-                System.out.println("---NO---");
             }
         }
 
-
+        return gl;
     }
 }
